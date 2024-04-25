@@ -1,0 +1,28 @@
+[package]
+name = "hash_benches"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+blake3 = "1.5.*"
+cdc = "0.1.1"
+criterion = "0.4.*"
+futures = "0.3.*"
+heim = { version = "0.1.0-rc.1", features = ["cpu", "memory"] }
+md5 = "0.7.*"
+rand = { version = "0.8.*", features = ["small_rng"] }
+rust-crypto = "0.2.*"
+sha2 = "0.11.0-pre.3"
+streebog = "0.11.0-pre.3"
+tokio = { version = "1.37.*", features = ["rt-multi-thread", "macros", "signal", "sync"] }
+zerocopy = { version = "0.7.*" }
+
+[[bench]]
+name = "hash_benches"
+harness = false
+
+[[bench]]
+name = "async_hash_benches"
+harness = false
